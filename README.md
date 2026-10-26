@@ -296,22 +296,4 @@ FROM fait_inscription;
 
 *Figure 20 : contrôle du nombre de lignes et des clés manquantes*
 
-## Limites
 
-- Les données ne couvrent qu'une seule période (septembre-octobre 2024) : l'évolution annuelle multi-années ne peut pas être montrée.
-- Les champs de l'énoncé absents des fichiers fournis (numéro d'étudiant, statut administratif, adresse, « nouvel inscrit ») ne sont pas modélisés ; le statut prend les valeurs Inscrit, Redoublant et Désisté.
-- Les 8 couples (étudiant, filière) répétés et les 23 montants à 0 sont conservés tels quels ; leur validation reste à faire.
-- 38 étudiants sur 100 n'ont aucune inscription : ils existent dans `dim_etudiant` mais pas dans le fait.
-- Il n'y a pas de job principal : les six jobs sont lancés à la main, dans l'ordre indiqué.
-
-## Organisation proposée du dépôt (à adapter)
-
-```
-.
-├── README.md
-├── data/                 Etudiants.xlsx, Filieres.xlsx, Inscriptions_2024.xlsx
-├── images/               figures utilisées dans ce README
-├── sql/                  script de création de dw_universite
-├── talaxie/              export des six jobs
-└── rapport/              rapport PDF
-```
